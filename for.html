@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input id="number" type="text" name="so" placeholder="ngày">
+    <button onclick="Tinh()" id="btn">Tính</button> -->
+
+    <input type="button" value="Clickme" onclick="change()" id="thayDoi"/>
+    
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.4.slim.js"
+  integrity="sha256-dWvV84T6BhzO4vG6gWhsWVKVoa4lVmLnpBOZh/CAHU4="
+  crossorigin="anonymous"></script>
+
+  <script>
+    function change() 
+    {
+        var thay = document.getElementById("thayDoi");
+
+        var type = thay.type;
+
+        if (type == "button") {
+
+            thay.type = 'text';
+        }
+        else{
+            thay.type = "button";
+        }
+    }
+    
+  </script>
+<!-- <script>
+    // var btnTinh = document.getElementById('btn');
+    var tinh = $('#btn');
+
+    var input = $('#number');
+
+    var number = $('input[type = "text"]');
+
+    var so = $('input[name = "so"]');
+
+    function Tinh() {
+
+        for (let index = 0; index < 9; index++) { 
+        }
+
+    }
+
+</script> -->
+
+
+</html>

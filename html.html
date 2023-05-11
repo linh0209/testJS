@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Page Title</title>
+
+		<!-- Bootstrap CSS -->
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" type="text/css" href="./style.css">
+	</head>
+	<body>
+		<div class="content-detail__qty">
+			<button class="content-detail__qty--btn btn-minus" id="buttonMinus"><i class="fa-solid fa-minus"></i></button>
+		  	<input class="content-detail__qty--input input_qty" id="input_quantity" min="5" max="20" name="" value="01" type="number">
+		    <button class="content-detail__qty--btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+		</div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> -->
+		
+		<!-- <script>
+			$('#input_quantity').on('change', function(e) {
+
+				let input_quantity = $('#input_quantity');
+
+				let number = input_quantity.val();
+
+				let max = input_quantity.attr('max');
+
+				if (number > max) {
+
+						input_quantity.val(max);
+				}
+
+			});
+		</script> -->
+
+		<script>
+			 $(document).on('change', '#input_quantity', function () {
+				var number = parseInt($(this).val());
+				var max = parseInt($(this).attr('max'));
+				if (number > max) {
+					$(this).val(max);
+				}
+    		});
+
+			// $('#btnMinus').prop('disabled',
+			// 	Number($('.input_qty').val()) < 1 ||
+			// 	Number($('.input_qty').val()) > Number($('.input_qty').attr('max'))
+        	// );
+		</script>
+		
+		
+		<script>
+			$('.btn-plus').on('click', function(e) {
+			  let input_quantity = $('#input_quantity');
+
+			  if (input_quantity.val() == ''){
+
+			  	input_quantity.val('0' + 1);
+
+			  }
+			  else
+			  {
+			  	let result =  parseInt(input_quantity.val())  + 1;
+
+				if (result > 9) {
+
+				  	input_quantity.val(result);
+
+				}
+				else input_quantity.val('0'+result);
+			  }
+
+			  
+
+
+			});
+
+			$('.btn-minus').on('click', function(e) {
+			  let input_quantity = $('#input_quantity');
+
+			  if (input_quantity.val() == ''){
+
+			  	input_quantity.val(0);
+
+			  }
+			  else
+			  {
+			  	let result = parseInt(input_quantity.val()) - 1;
+
+				if (result > 9) {
+
+					input_quantity.val(result);
+
+				}
+				else if (result == 0 || result < 0) {
+					input_quantity.val(0);
+				}else input_quantity.val('0'+result);
+			  }
+
+			  
+			});
+		</script>
+
+
+		<!-- max -->
+
+		
+
+		
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">A</label>
+    <input id="a" type="number">
+    <label for="b">B</label>
+    <input id="b" type="number">
+
+    <p id="ketqua">bấm để hiển thị kết quả</p>
+    
+    <!-- <button id="btncong" onclick="sum()">+</button>
+    <button id="btntru" onclick="minus()">-</button>
+    <button id="btnnhan" onclick="nhan()">*</button> -->
+
+    <button id="btncong" onclick="so(1, 'hai')">+</button>
+    <button id="btntru" onclick="so(2, 2)">-</button>
+    <button id="btnnhan" onclick="so(3, 3)">*</button>
+    <button id="btnchiadu" onclick="so(4, 4)">%</button>
+
+    
+</body>
+<script>
+        var inputa = document.getElementById('a');
+        var inputb = document.getElementById('b');
+        var c ;
+        var ketqua = document.getElementById('ketqua');
+
+
+        function so(type, u) {
+        
+        if (type == 1) {
+            c = parseFloat(inputa.value)  + parseFloat(inputb.value);
+        }
+
+        else if (type == 2 ) {
+            c = parseFloat(inputa.value)  - parseFloat(inputb.value);
+
+        }
+
+        else if (type == 3 ) {
+             c = parseFloat(inputa.value)  * parseFloat(inputb.value);
+        }
+
+        else if (type == 4) {
+            c = parseFloat(inputa.value)  / parseFloat(inputb.value);
+        }
+
+        
+        ketqua.innerHTML = 'kết quả là:' + c;
+
+}
+
+    // function sum() {
+    //      c = parseFloat(inputa.value)  + parseFloat(inputb.value);
+       
+    //     ketqua.innerHTML = 'kết quả là:' + c;
+    // }
+
+    // function minus() {
+        
+        
+    //      c = parseFloat(inputa.value)  - parseFloat(inputb.value);
+       
+    //     ketqua.innerHTML = 'kết quả là:' + c;
+    // }
+
+    // function nhan() {
+    //     c = parseFloat(inputa.value)  * parseFloat(inputb.value);
+       
+    //    ketqua.innerHTML = 'kết quả là:' + c;
+    // }
+
+   
+
+        // if ( c > 5) {
+        //     ketqua.innerHTML = 'kết quả là:' + c;    
+        // }
+        // else{
+        //     ketqua.innerHTML = 'kết quả bé hơn 5 là ' + c;
+        // }
+
+        
+
+        // c > 5 ? ketqua.innerHTML = 'kết quả là lớn:' + c : ketqua.innerHTML = 'kết quả bé hơn 5 là ' + c;
+
+    
+   
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+    <!-- Load Static Assets -->
+    <!----------------------------------------------------------------------------------->
+  
+
+
+
